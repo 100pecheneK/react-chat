@@ -5,11 +5,12 @@
   "repository": "https://github.com/100pecheneK/react-chat.git",
   "author": "100pecheneK <mistermihail23@gmail.com>",
   "scripts": {
-    "react": "yarn --cwd ./client start",
-    "build": "yarn --cwd ./client build",
-    "server": "yarn --cwd ./server server",
-    "start": "cd server && npm run server",
-    "heroku-postbuild": "cd server && npm install"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.4"
+  }
 }
