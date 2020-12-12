@@ -1,0 +1,13 @@
+{
+  "name": "react-chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/100pecheneK/react-chat.git",
+  "author": "100pecheneK <mistermihail23@gmail.com>",
+  "scripts": {
+    "react": "yarn --cwd ./client start",
+    "build": "yarn --cwd ./client build",
+    "server": "yarn --cwd ./server server"
+  },
+  "license": "MIT"
+}
