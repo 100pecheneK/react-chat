@@ -1,16 +1,20 @@
+const path = require('path')
+
 const express = require('express')
 const app = express()
+
 const http = require('http').createServer(app)
-const path = require('path')
+
+const port = process.env.PORT || 5000
 const io = require('socket.io')(http, {
   cors: {
-    origin: 'http://localhost:80',
+    origin: 'http://localhost:' + port,
     methods: ['GET', 'POST'],
   },
 })
 
 app.use(express.static(path.join(__dirname, '../client/build')))
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/build/index.html'))
 })
 
@@ -30,5 +34,4 @@ io.on('connection', socket => {
   })
 })
 
-const port = process.env.PORT || 5000
 http.listen(port)
