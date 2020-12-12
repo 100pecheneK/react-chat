@@ -10,7 +10,7 @@ export default function SocketProvider({ id, children }) {
   const [socket, setSocket] = useState()
   useEffect(() => {
     const newSocket = io(config.SERVER_URL, {
-      withCredentials: true,
+      transports: ['websocket'],
       query: { id },
     })
 
