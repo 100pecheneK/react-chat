@@ -15,8 +15,7 @@ const io = require('socket.io')(http, {
 
 app.use(express.static(path.join(__dirname, 'client/build')))
 app.get('/test', (req, res) => {
-  var list = ['item1', 'item2', 'item3']
-  res.json(list)
+  res.json(process.env)
   console.log('Sent list of items')
 })
 app.get('*', (req, res) => {
