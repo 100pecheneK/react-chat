@@ -9,7 +9,7 @@
     "build": "yarn --cwd ./client build",
     "server": "yarn --cwd ./server server",
     "start": "yarn server",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build && cd ../server && npm install"
   },
   "license": "MIT"
 }
