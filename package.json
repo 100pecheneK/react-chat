@@ -5,8 +5,7 @@
   "repository": "https://github.com/100pecheneK/react-chat.git",
   "author": "100pecheneK <mistermihail23@gmail.com>",
   "scripts": {
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "start": "node server.js"
   },
   "license": "MIT",
   "dependencies": {
